@@ -1,1 +1,22 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
+:root {
+    --accent-color: #000;
+    --main-font: 'Inter-Variable', sans-serif;
+    --accent-font: 'PressStart2P', sans-serif;
+    --bg-image: repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px), linear-gradient(to bottom, #e7e7e7 .01%, #1a1a1a);
+    --bg-color: #fff;
+    --header-title: var(--accent-color);
+    --header-subtitle: var(--accent-color);
+    --menu-color: var(--accent-color);
+    --border-color: var(--accent-color);
+    --lable-text-stroke: var(--bg-color);
+    --name: var(--accent-color);
+    --heart-color: #ff0000;
+    --heart-color-transparent: transparent;
+    --accent-font-wght: 400;
+    --wght-normal: 400;
+    --wght-bold: 700;
+    --button-color: var(--bg-color);
+}
+

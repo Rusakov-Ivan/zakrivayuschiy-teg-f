@@ -4,3 +4,98 @@
 ✦ theme-light — класс светлой темы
 ✦ не забудьте описать стили для изменения темы через медизапрос пользовательских предпочтений
 */
+
+
+:root.theme-light {
+  --accent-color: #000;
+  --main-font: 'Inter-Variable', sans-serif;
+  --accent-font: 'PressStart2P', sans-serif;
+    --bg-image: repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px), linear-gradient(to bottom, #e7e7e7 .01%, #1a1a1a);
+    --bg-color: #fff;
+    --header-title: var(--accent-color);
+    --header-subtitle: var(--accent-color);
+    --menu-color: var(--accent-color);
+    --border-color: var(--accent-color);
+    --name: var(--accent-color);
+    --heart-color: #ff0000;
+    --heart-color-transparent: transparent;
+    --lable-text-stroke: var(--bg-color);
+    --accent-font-wght: 400;
+    --wght-normal: 400;
+    --wght-bold: 700;
+    --button-color: var(--bg-color);
+}
+
+:root.theme-dark {
+  --accent-color: #00CC14;
+  --main-font: 'Inter-Variable', sans-serif;
+    --accent-font: 'PressStart2P', sans-serif;
+    --bg-image: repeating-linear-gradient(to right, #000 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px), linear-gradient(to bottom, #007f0c .01%, #004306);
+    --bg-color: #000;
+    --header-title: var(--accent-color);
+    --header-subtitle: var(--accent-color);
+    --menu-color: var(--accent-color);
+    --border-color: var(--accent-color);
+    --name: var(--accent-color);
+    --heart-color: #ff0000;
+    --heart-color-transparent: transparent;
+    --lable-text-stroke: var(--bg-color);
+    --wght-normal: 465;
+    --wght-bold: 785;
+     --accent-font-wght: 400;
+    --button-color: var(--accent-color);
+
+
+} 
+
+
+@media (prefers-color-scheme: dark) {
+    :root {
+      --accent-color: #00CC14;
+      --main-font: 'Inter-Variable', sans-serif;
+    --accent-font: 'PressStart2P', sans-serif;
+    --bg-image: repeating-linear-gradient(to right, #000 0 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #000 0 2px, transparent 2px 4px), linear-gradient(to bottom, #007f0c .01%, #004306);
+    --bg-color: #000;
+    --header-title: var(--accent-color);
+    --header-subtitle: var(--accent-color);
+    --menu-color: var(--accent-color);
+    --border-color: var(--accent-color);
+    --name: var(--accent-color);
+    --heart-color: #ff0000;
+    --heart-color-transparent: transparent;
+    --lable-text-stroke: var(--bg-color);
+    --wght-normal: 465;
+    --wght-bold: 785;
+     --accent-font-wght: 400;
+    --button-color: var(--accent-color);
+
+    }
+
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --accent-color: #000;
+    --main-font: 'Inter-Variable', sans-serif;
+    --accent-font: 'PressStart2P', sans-serif;
+    --bg-image: repeating-linear-gradient(to right, #d3d3d3 0px 2px, transparent 2px 4px),
+    repeating-linear-gradient(to bottom, #d3d3d3 0px 2px, transparent 2px 4px), linear-gradient(to bottom, #e7e7e7 .01%, #1a1a1a);
+    --bg-color: #fff;
+    --header-title: var(--accent-color);
+    --header-subtitle: var(--accent-color);
+    --menu-color: var(--accent-color);
+    --border-color: var(--accent-color);
+    --name: var(--accent-color);
+    --heart-color: #ff0000;
+    --heart-color-transparent: transparent;
+    --lable-text-stroke: var(--bg-color);
+    --accent-font-wght: 400;
+    --wght-normal: 400;
+    --wght-bold: 700;
+    --button-color: var(--bg-color);
+  }  
+
+}

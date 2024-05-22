@@ -13,8 +13,404 @@
 Кроме этого, не меняйте HTML переключателя тем. Его разметка также гарантирует работу своего скрипта.
 
 */
+@supports (font-variation-settings: var(--wgth-normal)) {
+  .page {
+    font-family: var(--main-font), sans-serif;
+    font-variation-settings: 'wght' var(--wgth-normal);
+  }
 
+}
+
+/* Page */
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--main-font), sans-serif;
+  font-variation-settings: 'wght' var(--wgth-normal);
+  background-attachment: fixed;
+  background-size: cover;
+  background-image: var(--bg-image);
+  background-color: var(--bg-color);
+}
+
+/* Header */
+.header {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: var(--bg-color);
+  max-width: 696px;
+  padding: 136px 0px 25px;
+  border: 2px solid var(--border-color);
+  margin: 102px auto 102px auto;
+}
+
+.header__title {
+  font-size: clamp(3.0625rem, 1.921rem + 4.9231vw, 4.0625rem);
+  font-family: var(--accent-font);
+  color: var(--header-title);
+  margin-bottom: 20px;
+  font-weight: var(--accent-font-wght);
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-size: clamp(0.875rem, 0.2329rem + 2.7692vw, 1.4375rem);
+  font-family: var(--accent-font);
+  color: var(--header-subtitle);
+  text-transform: uppercase;
+  margin-bottom: 24px;
+  font-weight: var(--accent-font-wght);
+}
+
+.letter {
+  text-transform: lowercase;
+}
+
+.theme-menu__list {
+  font-family: var(--accent-font);
+}
+
+.theme-menu__item:not(:last-of-type) {
+  margin-bottom: 10px;
+}
+
+.theme-menu__button {
+  text-transform: uppercase;
+  font-size: 14px;
+  line-height: 14px;
+  color: var(--menu-color);
+  position: relative;
+  margin-left: 15px;
+  transition: 0.3s;   
+}
+
+.theme-menu__button:disabled {
+  pointer-events: none;
+}
+
+.theme-menu__button:hover,
+.theme-menu__button:focus,
+.theme-menu__button:disabled {
+  opacity: 0.6;
+ 
+} 
+
+.theme-menu__button::before {
+  content: "▶";
+  position: absolute;
+  font-size: 14px;
+  top: 0;
+  left: -18px;
+  color: transparent;
+  transform-origin: top left;
+  animation: movement 0.5s infinite ease-in-out;
+  animation-direction: alternate;
+}
+
+.theme-menu__button:disabled:before {
+  color: var(--accent-color);
+}
+
+.theme-menu__button::after {
+  content: '';
+  position: absolute;
+  bottom: -3px;
+  left: 0;
+  height: 2px;
+  width: 100%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transform-origin: top left;
+  transition: 0.3s;
+  opacity: 0.6;
+}
+
+.theme-menu__button:focus-visible:after {
+  transform: scaleX(1);
+}
+
+/* Main */
+.main {
+  width: min(699px, 100%);
+  margin: 0 auto;
+}
+
+/* Card list */
+.card__list {
+  display: flex;
+  flex-direction: column;
+  
+}
+
+.card__list-title {
+  background-color: var(--bg-color);
+  padding: 4px 24px 4px 10px;
+  border-bottom: 2px solid var(--border-color);
+  font-size: 18px;
+  font-variation-settings: 'wght' var(--wght-bold);
+  color: var(--accent-color);
+}
+
+.card__list-item {
+  border: 2px solid var(--accent-color);
+  margin-bottom: 52px;
+}
+
+.card__item {
+  position: relative;
+}
+
+.card {
+  width: 100%;
+  aspect-ratio: 1 / 1;
+  object-fit: cover;
+  object-position: center;
+}
+
+@supports (-webkit-text-stroke: 1px var(--lable-text-stroke)) {
+  .teg {
+    -webkit-text-stroke: 1px var(--lable-text-stroke);
+    text-shadow: none;
+  }
+}
+
+.teg {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  font-size: 14px;
+  font-family: var(--accent-font);
+  color: var(--accent-color);
+  opacity: .5;
+  mix-blend-mode: hard-light;
+  -webkit-text-stroke: 1px var(--lable-text-stroke);
+  text-shadow: 1px var(--lable-text-stroke);
+}
+
+/* Filter */
+.filter__murky {
+  filter: saturate(25%) brightness(140%);
+}
+
+.filter__intense {
+  filter: saturate(400%) contrast(100%) brightness(100%);
+}
+
+.filter__violet {
+  filter: hue-rotate(30deg);
+}
+
+.filter__pale-green {
+  filter: invert(70%) brightness(120%) saturate(110%) contrast(110%)
+}
+
+.filter__sepia {
+  filter: sepia(90%);
+}
+
+.filter__blur {
+  filter: blur(9px);
+}
+
+.filter__red {
+  filter: invert(30%) hue-rotate(90deg);
+}
+
+.html,
+.css {
+  text-transform: uppercase;
+}
+
+/* Content */
+.content {
+  background-color: var(--bg-color);
+  border-top: 2px solid var(--border-color);
+  padding: 25px;
+  font-weight: 400;
+}
+
+.text {
+  font-size: 18px;
+  color: var(--accent-color);
+  line-height: 117%;
+  font-variation-settings: 'wght' var(--wght-normal);
+}
+
+.text:not(:last-of-type) {
+  margin-bottom: 27px;
+}
+
+.button__wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: end;
+  margin-top: 26px;
+}
+
+.like-icon {
+ width: 39px;
+ height: 36px;
+ padding: 0; 
+}
+
+.card__icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  transition: border 0.3s ease;
+  height: 38px;
+  margin-right: 5px;
+  border: 2px solid transparent;
+}
+
+.button:focus
+ {
+  outline: none;
+}
+
+.button__card {
+  transition: 0.3s ease;
+}
+
+.button__card::before
+ {
+  content: '';
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  background-color: var(--accent-color);
+  transform: scaleX(0);
+  transition: 0.5s ease-in-out;
+  transform-origin: top left;
+}
+
+.button__card:hover:before
+{
+  transform: scaleX(1);
+}
+
+.button__card:focus-visible
+{
+  box-shadow: 2px 2px var(--accent-color);
+}
+
+.button__text {
+  font-family: var(--accent-font);
+  font-size: 14px;
+  line-height: 90%;
+  z-index: 3;
+  mix-blend-mode: difference;
+  color: var(--button-color);
+}
+
+.card__like-button {
+  border: 2px solid var(--border-color);
+  width: 130px;
+    height: 38px;
+  position: relative;
+  transition: 0.3s ease;
+}
+
+.save__button {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  margin: 0 auto 100px;
+  align-items: center;
+  gap: 8px;
+  padding: 15px 19px;
+  border: 2px solid var(--border-color);
+  background-color: var(--bg-color);
+  
+}
+
+.save__button-icon {
+  color: var(--button-color);
+  mix-blend-mode: difference;
+  z-index: 3;
+}
+
+/* Dialog */
+dialog::backdrop {
+  background-color: rgb(0 0 0 / 0.75);
+}
+
+.modal {
+  max-width: 353px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 32px;
+  background-color: var(--bg-color);
+  border: 2px solid var(--border-color);
+}
+
+.modal__dialog-inner {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+
+.modal__dialog-text {
+  color: var(--accent-color);
+  font-family: var(--accent-font);
+  text-transform: uppercase;
+  line-height: 150%;
+  font-size: 14px;
+  font-weight: var(--wght-bold);
+}
+
+.modal__dialog-button {
+  position: relative;
+  border: 2px solid var(--border-color);
+  width: 293px;
+  height: 38px;
+}
+
+.modal__dialog-icon {
+  width: 90px;
+  height: 40px;
+  color: var(--accent-color);
+}
+
+/* Media  */
+@media (width <=400px) {
+  .header {
+    padding-top: 120px;
+  }
+
+ .card__list-item {
+  margin-bottom: 48px;
+ }
+
+  .card__list-title {
+    padding: 4px 10px 6px;
+  }
+  
+  .teg {
+    right: 11px;
+  }
+
+  .save__button {
+    flex-direction: column;
+  }
+
+  .save__button-icon {
+    width: 29px;
+    height: 29px;
+  }
+
+  .modal {
+  padding: 30px 38px; 
+  }
+
+  .modal__dialog-button {
+  width: 257px;
+  }
+
 }
